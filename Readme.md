@@ -37,5 +37,5 @@
 
 
 
-<h2>Thak you</h2>
+<h2>Thank you</h2>
 
