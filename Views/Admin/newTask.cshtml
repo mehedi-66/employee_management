@@ -1,0 +1,50 @@
+@model TaskE
+
+<link rel="stylesheet" href="~/css/home.css">
+<link rel="stylesheet" href="~/css/admin.css">
+
+<header class="Header">
+    <li> <a asp-area="" asp-controller="Home" asp-action="formAdmin">Home</a></li>
+    <li><a asp-area="" asp-controller="Home" asp-action="formWorker">Logout</a></li>
+</header>
+
+<div class="Wrapper">
+
+    <div class="leftSide">
+        <ul class="leftSideUl">
+            <li><a asp-area="" asp-controller="Admin" asp-action="admin">Employe Details</a></li>
+            <li><a asp-area="" asp-controller="Admin" asp-action="add">Add new</a></li>
+            <li><a asp-area="" asp-controller="Admin" asp-action="task">Task</a></li>
+            <li><a asp-area="" asp-controller="Admin" asp-action="query">Query</a></li>
+
+        </ul>
+    </div>
+    <div class="rightSide">
+        <div class="loginForm">
+            <p class="loginHeading">Assign New Task</p>
+            <form action="" method="post">
+                <p class="fromP">ID: <input  asp-for="Id" type="text"  name="" id="" class="inputID" placeholder=@ViewData["ID"] > </p>
+                 <span asp-validation-for="Id" class="text-danger"></span>
+                 
+                 <p class="fromDate">Name: <input  asp-for="Name" type="text" class="inputDate" placeholder=@ViewData["Name"] /></p>
+                  <span asp-validation-for="Name" class="text-danger"></span>
+
+                <p class="fromDate">Date: <input asp-for="Date" type="date" class="inputDate" /></p>
+                  <span asp-validation-for="Date" class="text-danger"></span>
+                 
+                  <p class="fromDate">Phone: <input asp-for="Phone" type="text" class="inputDate" /></p>
+                  <span asp-validation-for="Phone" class="text-danger"></span>
+                 
+               
+                <p class="fromDate">Status: <input asp-for="Status" type="text" class="inputDate" placeholder="Not done" ></p>
+                 <span asp-validation-for="Status" class="text-danger"></span>
+                
+                <p class="fromDec" style="margin-top:10px">Description: </p>
+                <input asp-for="Details" type="text" class="inputText" placeholder="Submit file Today" />
+                 <span asp-validation-for="Details" class="text-danger"></span>
+                <button type="submit">Submit</button>
+            </form>
+
+        </div>
+    </div>
+</div>

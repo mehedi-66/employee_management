@@ -1,0 +1,45 @@
+@model Employe
+
+<link rel="stylesheet" href="~/css/home.css">
+<link rel="stylesheet" href="~/css/admin.css">
+
+<header class="Header">
+    <li> <a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+    <li><a asp-area="" asp-controller="Home" asp-action="Index">Logout</a></li>
+</header>
+
+<div class="Wrapper">
+
+    <div class="leftSide">
+       <ul class="leftSideUl">
+           <li><a asp-area="" asp-controller="Admin" asp-action="Admin">Employe Details</a></li>
+           <li><a asp-area="" asp-controller="Admin" asp-action="add">Add new</a></li>
+           <li><a asp-area="" asp-controller="Admin" asp-action="task">Task</a></li>
+           <li><a asp-area="" asp-controller="Admin" asp-action="query">Query</a></li>
+           
+       </ul>
+    </div>
+    <div class="rightSide">
+      <div class="loginForm">
+    <p class="loginHeading">Edit Employe</p>
+    <form action="" method="post">
+        <p>Name: <input asp-for="Name" type="text"  placeholder="Mehedi" class="inputName"/></p>
+            <span asp-validation-for="Name" class="text-danger"></span>
+         <p>Salary: <input asp-for="Salary"  type="text"  placeholder="10" class="inputSalary inputName"/></p>
+             <span asp-validation-for="Salary" class="text-danger"></span>
+         <p>Phone: <input asp-for="Phone" type="text"  placeholder="017**" class="inputPhone inputName"/></p>
+            <span asp-validation-for="Phone" class="text-danger"></span>
+         <p>Email: <input asp-for="Email" type="email"  placeholder="me@gmail.com" class="inputEmail inputName"/></p>
+            <span asp-validation-for="Email" class="text-danger"></span>
+         
+         <div>
+             <button type="submit">Update</button>
+        <button> <a asp-controller="Admin" asp-action="admin">Cancel</a> </button>
+         </div>
+         
+    </form>
+
+</div>
+    </div>
+</div>
+

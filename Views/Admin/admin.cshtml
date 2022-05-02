@@ -1,0 +1,49 @@
+@model IEnumerable<Employe>
+
+<link rel="stylesheet" href="~/css/admin.css">
+<link rel="stylesheet" href="~/css/home.css">
+
+<header class="Header">
+    <li> <a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+    <li><a asp-area="" asp-controller="Home" asp-action="Index">Logout</a></li>
+</header>
+
+<div class="Wrapper">
+
+    <div class="leftSide">
+        <ul class="leftSideUl">
+            <li><a asp-area="" asp-controller="Admin" asp-action="admin">Employe Details</a></li>
+            <li><a asp-area="" asp-controller="Admin" asp-action="add">Add new</a></li>
+            <li><a asp-area="" asp-controller="Admin" asp-action="task">Task</a></li>
+            <li><a asp-area="" asp-controller="Admin" asp-action="query">Query</a></li>
+          
+        </ul>
+    </div>
+    <div class="rightSide">
+        <div class="upperPart">
+            <h2>Employee Details</h2>
+        </div>
+        <div class="lowerPart">
+            @foreach (var obj in Model)
+            {
+                <div class="Box">
+                    <p>ID: @obj.Id</p>
+                    <p>Name: @obj.Name</p>
+                    <p>Phone: @obj.Phone</p>
+                    <p>Email: @obj.Email</p>
+                    <button class="taskEditBtn">
+                        <a asp-controller="Admin" asp-action="Edit" asp-route-id="@obj.Id">Edit</a>
+                   </button>
+                    <button class="taskDeleteBtn taskEditBtn">
+                        <a asp-controller="Admin" asp-action="Delete" asp-route-id="@obj.Id">Delete</a>
+                    </button>
+
+                     <button class="taskEditBtn taskAssigned">
+                        <a asp-controller="Admin" asp-action="newTask" asp-route-id="@obj.Id">Assign Task</a>
+                   </button>
+                </div>
+            }
+            
+        </div>
+    </div>
+</div>

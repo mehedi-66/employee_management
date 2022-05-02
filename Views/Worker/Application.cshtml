@@ -1,0 +1,162 @@
+@model Application
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Automatic Popup</title>
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!--Stylesheets-->
+    <style media="screen">
+        body {
+
+            background: url(https://cdn1.tnwcdn.com/wp-content/blogs.dir/1/files/2015/10/interview-1200x641.jpg) no-repeat;
+            background-size: cover;
+        }
+
+        *,
+        :before,
+        *:after {
+            * padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+
+        .popup {
+            background-color: whitesmoke;
+            width: 420px;
+            padding: 30px 40px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+            border-radius: 8px;
+            font-family: "Poppins", sans-serif;
+            display: none;
+            text-align: center;
+        }
+
+        .button1 {
+            display: block;
+            margin: 0 0 20px auto;
+            background-color: transparent;
+            font-size: 30px;
+            color: #ffffff;
+            background: green;
+            border-radius: 100%;
+            width: 40px;
+            height: 40px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .popup h2 {
+            margin-top: 2px;
+        }
+
+        .popup p {
+            font-size: 14px;
+            text-align: justify;
+            margin: 24px 0;
+            line-height: 18px;
+        }
+
+        .a {
+            display: block;
+            width: 89px;
+            position: relative;
+            margin: 10px auto;
+            text-align: center;
+            background-color: #0f72e5;
+            border-radius: 20px;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 0;
+            float: left;
+        }
+
+        #Back {
+            background: #0f72e5;
+            border: none;
+            color: white;
+        }
+
+        .btn_last {
+            margin-top: 27px;
+            background: #0f72e5;
+            width: 88px;
+            font-size: 13px;
+            padding: 6px;
+            border-radius: 14px;
+            color: white;
+            border: 1px solid green;
+        }
+    </style>
+
+    <link rel="stylesheet" href="~/css/home.css">
+    <link rel="stylesheet" href="~/css/admin.css">
+
+</head>
+
+<body>
+
+   
+    <div class="popup">
+        <a class="a" asp-controller="Worker" asp-action="Index" asp-route-id="@ViewData["ID"]"> <button id="Back">Back</button>
+        </a>
+        <a asp-controller="Worker" asp-action="Index" asp-route-id="@ViewData["ID"]"> <button class="button1" id="close">&times;</button> </a>
+
+        <h2 style="color : green;">Application Box</h2>
+
+        <form action="" method="post">
+            <p class="fromP">ID: <input asp-for="Id" type="text" name="" id="" class="inputID"
+                    placeholder=@ViewData["ID"]> </p>
+            <span asp-validation-for="Id" class="text-danger"></span>
+
+            <p class="fromDate">Name: <input asp-for="Name" type="text" class="inputDate"
+                    placeholder=@ViewData["Name"] /></p>
+            <span asp-validation-for="Name" class="text-danger"></span>
+
+            <p class="fromDate">Subject: <input asp-for="Subject" type="text" class="inputDate" /></p>
+            <span asp-validation-for="Subject" class="text-danger"></span>
+
+            <p class="fromDate">Date: <input asp-for="Date" type="date" class="inputDate" /></p>
+            <span asp-validation-for="Date" class="text-danger"></span>
+
+
+            <p class="fromDate">Status <input asp-for="Status" type="text" class="inputDate" placeholder="Request"></p>
+            <span asp-validation-for="Status" class="text-danger"></span>
+
+            <p class="fromDec" style="margin-top:10px">Description: </p>
+            <input asp-for="Description" type="text" class="inputText" placeholder="Write down your words" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+
+            <button class="btn_last" type="submit">Submit</button>
+
+        </form>
+
+    </div>
+
+
+    <script type="text/javascript">
+        window.addEventListener("load", function () {
+            setTimeout(
+                function open(event) {
+                    document.querySelector(".popup").style.display = "block";
+                },
+                2000
+            )
+        });
+
+
+        document.querySelector("#close").addEventListener("click", function () {
+            document.querySelector(".popup").style.display = "none";
+        });
+    </script>
+</body>
+
+</html>

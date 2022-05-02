@@ -1,0 +1,22 @@
+@model login
+
+<link rel="stylesheet" href="~/css/home.css">
+
+<header class="Header">
+    <li> <a asp-area="" asp-controller="Home" asp-action="formAdmin">Admin</a></li>
+    <li><a asp-area="" asp-controller="Home" asp-action="formWorker">Worker</a></li>
+</header>
+
+<div class="loginForm">
+    <p class="loginHeading">Worker Login</p>
+    <form action="../Worker/profile" method="post">
+        <p>ID: <input asp-for="Id" type="text"  placeholder="Enter your ID" class="inputName"/></p>
+         <span asp-validation-for="Id" class="text-danger"></span>
+         <span class="error" >@ViewData["ID"]</span>
+         <p>Password: <input asp-for="Password" type="password"  placeholder="Enter your password" class="inputPassword"/></p>
+          <span asp-validation-for="Password" class="text-danger"></span>
+           <span class="error">@ViewData["Pass"]</span>
+         <button>Login</button>
+    </form>
+
+</div>

@@ -1,0 +1,147 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Assigned Task</title>
+  <style>
+    body {
+
+      background: url(https://bbdniit.ac.in/wp-content/uploads/2020/09/banner-background-without-image-min.jpg) no-repeat;
+      background-size: auto;
+    }
+
+    .tasktable {
+      height: 60vh;
+      width: 100%;
+      margin-left: 318px;
+
+    }
+
+    .topbar {
+      background-color: rgb(19, 76, 122);
+      overflow: hidden;
+    }
+
+    .topbar a {
+      float: right;
+      color: whitesmoke;
+      text-align: centre;
+      padding: 20px 26px;
+      text-decoration: none;
+      font-size: 26px;
+    }
+
+
+    }
+
+    .apptable-title p {
+      padding-top: 20px;
+      padding-left: 50px;
+    }
+
+    .apptable {
+      margin-top: 25px;
+      margin-left: 50px;
+      width: 100%;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: rgb(19, 76, 122);
+      ;
+      color: #fff;
+      padding: 10px;
+    }
+
+    .row1 {
+      background-color: #f5f6fa;
+      color: black;
+    }
+
+    .fas {
+      color: #0097e6;
+    }
+
+    tr:hover {
+      background-color: #ffeaa7;
+    }
+
+    tr #emplename {
+      color: #0097e6;
+    }
+
+    td span {
+      padding: 4px;
+    }
+
+    #pending {
+      background-color: #EA2027;
+      border-radius: 10px;
+      border: 1px solid #EA2027;
+    }
+
+    #done {
+      border-radius: 10px;
+      background-color: #10ac84;
+      border: 1px solid #10ac84;
+    }
+
+    #ongoing {
+      border-radius: 10px;
+      background-color: #feca57;
+      border: 1px solid #feca57;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="main">
+      <div class="topbar">
+        <a asp-controller="Home" asp-action="Index">Logout</a>
+        <a asp-controller="Worker" asp-action="Index" asp-route-id="@ViewData["ID"]">Home</a>
+        <a asp-controller="Worker" asp-action="Task" asp-route-id="@ViewData["ID"]">Assigned Task</a>
+        <a asp-controller="Worker" asp-action="Application" asp-route-id="@ViewData["ID"]">Application</a>
+      </div>
+
+      <div class="topbar">
+        <div class="title">
+          <h2 style="color :white;  text-align: center;">Task Management</h2>
+        </div>
+      </div>
+      <div class="tasktable">
+        <div class="table-title">
+        </div>
+        <div class="apptable">
+          <table>
+            <tr>
+              <th>Task No</th>
+              <th>Task details</th>
+              <th>Assign date</th>
+              @* <th>Due Date</th> *@
+              <th>Task Status</th>
+
+            </tr>
+
+            <p>No Task Available</p>
+
+
+
+            </tr>
+
+
+
+          </table>
+        </div>
+
+      </div>
+    </div>
+</body>

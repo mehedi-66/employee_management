@@ -1,0 +1,84 @@
+@model TaskE
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title>Employee's profile</title>
+    <style>
+        body {
+            @*margin-top:20px;*@background-color: paleturquoise;
+        }
+
+        .main {
+            @*padding:15px;*@font-family: Poppins;
+        }
+
+        .topbar {
+            background-color: rgb(19, 76, 122);
+            overflow: hidden;
+        }
+
+        .topbar a {
+            float: right;
+            color: whitesmoke;
+            text-align: centre;
+            padding: 20px 26px;
+            text-decoration: none;
+            font-size: 23px;
+        }
+
+        .sidebar {
+            background-color: skyblue;
+            color: white;
+            height: 50%;
+        }
+
+        .sidebar a {
+            margin-left: 10px;
+            display: block;
+            color: white;
+            padding-bottom: 10px;
+            font-size: 30px;
+            text-decoration: none;
+        }
+
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .content {
+            background-color: whitesmoke;
+        }
+    </style>
+
+    <link rel="stylesheet" href="~/css/admin.css">
+    <link rel="stylesheet" href="~/css/home.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <div class="topbar">
+                <a asp-controller="Home" asp-action="Index">Logout</a>
+                <a asp-controller="Worker" asp-action="Index" asp-route-id="@Model.Id">Home</a>
+                <a asp-controller="Worker" asp-action="Task" asp-route-id="@Model.Id">Assigned Task</a>
+                <a asp-controller="Worker" asp-action="Application" asp-route-id="@Model.Id">Application</a>
+            </div>
+
+            <div class="loginForm">
+                <p class="loginHeading">Task for ID @Model.Id</p>
+                <p>Name: @Model.Name</p>
+                <p>@Model.Details</p>
+
+            </div>
+
+        </div>
+    </div>
+</body>

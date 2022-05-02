@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-size: 1351px 699px;
+}
+.Header{
+    background: rgb(1 116 157);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 60px;
+    align-content: space-around;
+  
+}
+.Header li{
+    list-style: none;
+
+}
+.Header li a{
+    color: #ffffff;
+    text-decoration: underline;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: block;
+    text-decoration-line: none;
+}
+
+.loginForm{
+    width: 500px;
+    margin: 100px auto;
+    background: #e9e6e69c;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 4px #979090;
+    border-radius: 5px;
+    height: 265px;
+    padding: 40px;
+}
+.loginForm p{
+    margin: 5px;
+}
+.loginForm button{
+    margin: 0 auto;
+    display: block;
+    width: 118px;
+    border: 1px solid #d59f9f;
+    background-color: #01749d;
+    color: white;
+    height: 34px;
+    border-radius: 5px;
+    font-size: 17px;
+    margin-top: 23px;
+
+}
+.loginForm button:hover{
+    background-color: green;
+    color: black;
+    font-weight: bold;
+}
+.loginHeading{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 17px;
+    font-weight: bold;
+}
+.inputName{
+    margin-left: 57px;
+    width: 239px;
+    border-radius: 3px;
+    padding-left: 5px;
+    font-size: 15px;
+
+}
+.inputPassword{
+    margin-left: 6px;
+    width: 239px;
+    border-radius: 3px;
+    padding-left: 5px;
+    font-size: 15px;
+
+}
+
+.error{
+    margin-left: 82px;
+    font-size: 12px;
+    color: red;
+}

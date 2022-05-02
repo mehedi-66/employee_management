@@ -1,0 +1,52 @@
+@model IEnumerable<TaskE>
+
+<link rel="stylesheet" href="~/css/home.css">
+<link rel="stylesheet" href="~/css/admin.css">
+
+<header class="Header">
+    <li> <a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+    <li><a asp-area="" asp-controller="Home" asp-action="Index">Logout</a></li>
+</header>
+
+<div class="Wrapper">
+
+    <div class="leftSide">
+        <ul class="leftSideUl">
+            <li><a asp-area="" asp-controller="Admin" asp-action="admin">Employe Details</a></li>
+            <li><a asp-area="" asp-controller="Admin" asp-action="add">Add new</a></li>
+            <li><a asp-area="" asp-controller="Admin" asp-action="task">Task</a></li>
+            <li><a asp-area="" asp-controller="Admin" asp-action="query">Query</a></li>
+
+        </ul>
+    </div>
+    <div class="rightSide">
+        <div class="upperPart">
+            <div>
+                <p class="taskDetailsP"><a asp-area="" asp-controller="Admin" asp-action="task">Task Details</a></p>
+            </div>
+            <div>
+                <p class="taskDetailsP"><a asp-area="" asp-controller="Admin" asp-action="admin">New Task</a></p>
+            </div>
+        </div>
+        <div class="lowerPart">
+
+            @foreach (var obj in Model)
+            {
+                <div class="Box">
+                    <p>ID: @obj.Id </p>
+                    <p>Name: @obj.Name</p>
+                     <p>Phone: @obj.Phone</p>
+                    <p>Status: @obj.Status</p>
+                    <button class="taskDetailsBtn">
+                         <a asp-controller="Admin" asp-action="TaskDetails" asp-route-id="@obj.Id">Details</a>
+                    </button>
+                    <button class="taskDeleteBtn">
+                         <a  asp-controller="Admin" asp-action="TaskDelete" asp-route-id="@obj.Id">Delete</a>
+                    </button>
+                </div>
+            }
+        </div>
+
+    </div>
+</div>
+</div>

@@ -1,0 +1,155 @@
+﻿@model IEnumerable<Application>
+
+@{
+  ViewData["Title"] = "Application Query";
+}
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+<link rel="stylesheet" href="~/css/home.css">
+<link rel="stylesheet" href="~/css/admin.css">
+
+<header class="Header">
+    <li> <a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+    <li><a asp-area="" asp-controller="Home" asp-action="Index">Logout</a></li>
+</header>
+
+<div class="Wrapper">
+  <div class="leftSide">
+    <ul class="leftSideUl">
+      <li><a asp-area="" asp-controller="Admin" asp-action="Admin">Employe Details</a></li>
+      <li><a asp-area="" asp-controller="Admin" asp-action="add">Add new</a></li>
+      <li><a asp-area="" asp-controller="Admin" asp-action="task">Task</a></li>
+      <li><a asp-area="" asp-controller="Admin" asp-action="query">Query</a></li>
+    </ul>
+  </div>
+  <div class="rightSide">
+    <div class="upperPart">
+      <h2>Application Query</h2>
+    </div>
+    <div class="lowerPart">
+
+      <div id="Querybody" class="applicationquerybody">
+
+        <div class="applicationtable">
+          <div class="apptable-title">
+            <div class="apptable">
+              <table>
+                <tr>
+                  <th>Employee Id</th>
+                  <th>Employee Name</th>
+                  <th>Application type</th>
+                  <th>Application Date</th>
+                  <th>Application Status</th>
+                  <th>Action</th>
+                </tr>
+                @foreach (var obj in Model)
+                {
+                  <tr class="row1">
+                    <td>@obj.Id</td>
+                    <td id="emplename"><i class='fas'>&#xf406;</i><span>@obj.Name</span></td>
+                    <td>@obj.Subject</td>
+                    <td>@obj.Date</td>
+                    <td><button id="pending">@obj.Status</button> </td>
+                    <td><a asp-controller="Admin" asp-action="showMore" asp-route-id="@obj.Id">view more</a> </td>
+
+                  </tr>
+                }
+
+              </table>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+    <!--css part start -->
+    <style>
+      .title {
+        height: 90px;
+        color: black;
+        text-align: center;
+      }
+
+      .applicationtable {
+
+        height: 60vh;
+        width: 100%;
+      @*background-color:#f1f2f6;*@@*margin-left:160px;*@
+      }
+
+      .apptable-title {
+        height: 50px;
+
+        // background-color: #f1f2f6;
+
+        color: #6D214F;
+      }
+
+      .apptable-title p {
+        padding-top: 20px;
+        padding-left: 50px;
+      }
+
+      .apptable {
+        margin-top: 25px;
+        margin-left: 50px;
+        width: 100%;
+      }
+
+      th,
+      td {
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #6D214F;
+        color: #fff;
+        padding: 10px;
+      }
+
+      .row1 {
+        background-color: #f5f6fa;
+        color: black;
+      }
+
+      .fas {
+        color: #0097e6;
+      }
+
+      tr:hover {
+        background-color: #ffeaa7;
+      }
+
+      tr #emplename {
+        color: #0097e6;
+      }
+
+      td span {
+        padding: 4px;
+      }
+
+      #notapporved {
+        background-color: #EA2027;
+        border-radius: 10px;
+        border: 1px solid #EA2027;
+      }
+
+      #approved {
+        border-radius: 10px;
+        background-color: #10ac84;
+        border: 1px solid #10ac84;
+      }
+
+      #pending {
+        border-radius: 10px;
+        background-color: #feca57;
+        border: 1px solid #feca57;
+      }
+    </style>

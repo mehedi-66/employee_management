@@ -1,0 +1,270 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.Wrapper{
+
+}
+
+.leftSide{
+    width: 13%;
+    height: 100vh;
+    /* border: 1px solid red; */
+    float: left;
+    background: #460362;
+
+}
+.leftSideUl{
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 0px;
+
+}
+.leftSideUl li{
+    list-style: none;
+    margin-top: 10px;
+}
+.leftSideUl li a{
+    text-decoration: none;
+    display: block;
+    background: #870063;
+    padding: 4px;
+    color: white;
+    font-weight: 500;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 9px;
+    text-align: center;
+}
+.leftSideUl li a:hover{
+    background: blue;
+    color: rgb(241, 241, 241);
+    font: 18px;
+}
+
+.rightSide{
+    width: 87%;
+    height: 100vh;
+    float: right;
+    border: 1px solid green;
+}
+
+.upperPart{
+    display: flex;
+    justify-content: space-around;
+    height: 97px;
+    /* border: 1px solid red; */
+    box-sizing: border-box;
+    padding: 33px;
+
+}
+.lowerPart{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: space-around;
+    padding: 8px;
+}
+.Box{
+    margin-bottom: 10px;
+    width: 289px;
+    /* border: 1px solid red; */
+    margin-top: 5px;
+    box-sizing: border-box;
+    box-shadow: 0px 1px 4px #464141;
+    padding: 12px;
+    border-radius: 6px;
+    background: #e9e6e69c;
+}
+
+/* ***************** START Add Page CSS ************ */
+.loginForm{
+    width: 502px;
+    margin: 100px auto;
+    background: #e9e6e69c;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 4px #979090;
+    border-radius: 5px;
+    height: 497px;
+    padding: 40px;
+}
+.loginForm p{
+    margin: 0px;
+}
+.loginForm span{
+    margin-left: 82px;
+    font-size: 14px;
+}
+.loginForm button{
+    margin: 0 auto;
+    display: block;
+    width: 118px;
+    border: 1px solid #d59f9f;
+    background-color: blue;
+    color: white;
+    height: 34px;
+    border-radius: 5px;
+    font-size: 17px;
+    margin-top: 23px;
+
+}
+.loginForm button:hover{
+    background-color: green;
+    color: black;
+    font-weight: bold;
+}
+.loginHeading{
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 17px;
+    font-weight: bold;
+}
+.inputName{
+    margin-left: 30px;
+    width: 239px;
+    border-radius: 3px;
+    padding-left: 5px;
+    font-size: 15px;
+
+}
+.inputPassword{
+    margin-left: 8px;
+    width: 239px;
+    border-radius: 3px;
+    padding-left: 5px;
+    font-size: 15px;
+
+}
+.inputAge{
+    margin-left: 43px;
+
+}
+.inputSalary{
+
+}
+.inputPhone{
+
+}
+.inputEmail{
+    margin-left: 36px;
+
+}
+/* *********************** END Add Page CSS ************* */
+
+
+/* ***************** START Task Page CSS ********** */
+.taskDetailsP{
+    background: #870063;
+    width: 150px;
+    border: 1px solid #9999ef;
+    box-sizing: border-box;
+    box-shadow: 1px 2px 3px #ddd;
+    color: white;
+    border-radius: 6px;
+    font-size: 17px;
+    padding: 4px;
+    text-align: center;
+}
+.taskDetailsP > a{
+    text-decoration: none;
+    color: white;
+}
+
+
+.taskDetailsBtn{
+    background: #870063;
+    width: 63px;
+    border: 1px solid blue;
+    box-sizing: border-box;
+    padding: 0px;
+    box-shadow: 1px 2px 3px #ddd;
+    color: white;
+    border-radius: 6px;
+    font-size: 15px;
+}
+.taskEditBtn{
+    background: #400087;
+    width: 52px;
+    border: 1px solid blue;
+    box-sizing: border-box;
+    padding: 0px;
+    box-shadow: 1px 2px 3px #ddd;
+    color: white;
+    border-radius: 6px;
+    font-size: 15px;
+}
+.taskEditBtn a{
+    text-decoration: none;
+    color: white;
+}
+.taskDeleteBtn{
+    background: #b50019;
+    width: 50px;
+    border: 1px solid blue;
+    box-sizing: border-box;
+    padding: 0px;
+    box-shadow: 1px 2px 3px #ddd;
+    color: white;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+
+.taskAssigned{
+    float: right;
+    background: #2b6c03;
+    margin-top: -11px;
+    border-radius: 6px;
+    font-size: 13px;
+
+}
+
+    /*  =========== START NewTask page css ============= */
+
+    
+.fromP{
+
+}
+.inputID{
+    margin-left: 31px;
+    width: 260px;
+    margin-top: 51px;
+
+}
+.fromDate{
+
+}
+.inputDate{
+    margin-left: 15px;
+    width: 260px;
+    margin-top: 10px;
+
+}
+.fromDec{
+
+}
+.inputText{
+    width: 100%;
+
+}
+
+
+    /*  =========== END NewTask page css ============= */
+
+
+/* ***************** START Query Page CSS ********** */
+
+.btn_handel{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.btn_handel button{
+    background: #670491;
+}
+.btn_handel button a{
+    color: white;
+    text-decoration: none;
+}
