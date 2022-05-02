@@ -14,7 +14,7 @@
 <h3>Create New Employee</h3>
 <img src="./img/add.png">
 
-<h3>Assig Task to Employee</h3>
+<h3>Assign Task to Employee</h3>
 <img src="./img/assign.png">
 
 <h3>Show Task</h3>
